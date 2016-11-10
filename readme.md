@@ -1,5 +1,7 @@
 # Phaser Camera Offset
 
+![screenshot](https://samme.github.io/phaser-camera-offset/screenshot.png)
+
 ```javascript
 // camera.follow(target, style, lerpX, lerpY, offsetX, offsetY)
 camera.follow(player, FOLLOW_STYLE, 0.5, 0.5, 64, 64);
