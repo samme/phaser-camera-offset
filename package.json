@@ -1,6 +1,6 @@
 {
   "name": "phaser-camera-offset",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Offset the camera view from its follow target",
   "main": "index.js",
   "directories": {
@@ -10,7 +10,9 @@
   "dependencies": {
     "phaser": "^2.6.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "coffeebar": "^1.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samme/phaser-camera-offset.git"
@@ -18,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/samme/phaser-camera-offset/issues"
   },
-  "homepage": "https://github.com/samme/phaser-camera-offset#readme"
+  "homepage": "https://github.com/samme/phaser-camera-offset#readme",
+  "scripts": {
+    "start": "coffeebar --watch ."
+  }
 }
