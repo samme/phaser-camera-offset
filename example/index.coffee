@@ -51,6 +51,11 @@ game = new Phaser.Game
       player = @add.sprite @world.centerX, @world.centerY, 'player'
       player.anchor.set 0.5
       player.name = 'camera.target'
+      tx = @make.bitmapData(480, 320)
+        .fill(0, 0, 0, 0.5)
+        .generateTexture()
+      @mask = @add.image 0, 0, tx
+      @mask.fixedToCamera = yes
       cursors = game.input.keyboard.createCursorKeys()
       @camera.follow player, FOLLOW_STYLE, 0.5, 0.5, 64, 64
       @gui = makeGui @camera, width: 480
@@ -69,14 +74,12 @@ game = new Phaser.Game
       {camera, debug} = game
       {deadzone, targetOffset, view} = camera
       {x, y} = camera._targetPosition
-      debug.cameraInfo camera, 32, 32, 'yellow'
-      debug.spriteCoords player, 32, 608, 'violet'
+      debug.cameraInfo camera, 32, 32, 'white'
+      debug.spriteCoords player, 32, 160, 'violet'
+      debug.text "camera.targetOffset: x: #{targetOffset.x} y: #{targetOffset.y}", 32, 288, 'yellow', debug.font
       line.setTo x, y, x - targetOffset.x, y - targetOffset.y
       debug.geom line, YELLOW
       debug.pixel view.centerX - view.x, view.centerY - view.y, YELLOW
-      line.setTo x, y, view.centerX, view.centerY
-      if line.length isnt 0
-        debug.geom line, ORANGE
       if deadzone
         rect.copyFrom(deadzone).offset view.x, view.y
         debug.geom rect, RED, no
