@@ -57,7 +57,7 @@ game = new Phaser.Game
       @mask = @add.image 0, 0, tx
       @mask.fixedToCamera = yes
       cursors = game.input.keyboard.createCursorKeys()
-      @camera.follow player, FOLLOW_STYLE, 0.5, 0.5, 64, 64
+      @camera.follow player, FOLLOW_STYLE, 0.5, 0.5, 128, 128
       @gui = makeGui @camera, width: 480
       debug.font = '16px monospace'
       debug.lineHeight = 24
