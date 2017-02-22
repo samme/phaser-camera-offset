@@ -1,6 +1,6 @@
 {
   "name": "phaser-camera-offset",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Offset the camera view from its follow target",
   "main": "index.js",
   "directories": {
